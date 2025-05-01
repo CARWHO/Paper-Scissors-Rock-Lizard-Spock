@@ -1,3 +1,5 @@
+![Board Schematic](./Schematic.png)
+
 # Paper, Scissors, Rock, Spock, Lizard
 
 ## Description
