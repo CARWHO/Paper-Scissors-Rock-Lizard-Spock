@@ -1,38 +1,26 @@
-![Board Schematic](./Schematic.png)
+![Schematic](./Schematic.png)
 
-# Paper, Scissors, Rock, Spock, Lizard
+# Rock Paper Scissors Lizard Spock
 
-## Description
-This game is an extended version of the classic Rock-Paper-Scissors. In this version, two additional choices are added: Spock and Lizard. The rules are based on how each element interacts with the others, creating a fun, strategic twist on the original game.
+The Big Bang Theory version of rock-paper-scissors, running on an ATmega32U2. Built this for an embedded systems course.
 
-## How to Play
-1. **Players**: The game can be played between two players or a player vs the computer.
-2. **Choices**: Each player selects one of the five options:
-   - **Rock** (crushes Scissors, crushes Lizard)
-   - **Paper** (covers Rock, disproves Spock)
-   - **Scissors** (cuts Paper, decapitates Lizard)
-   - **Spock** (smashes Scissors, vaporizes Rock)
-   - **Lizard** (eats Paper, poisons Spock)
+Two players, three rounds, winner displayed on LEDs.
 
-3. **Winning**: The outcome is determined by comparing both choices based on the rules:
-   - Rock crushes Scissors
-   - Rock crushes Lizard
-   - Paper covers Rock
-   - Paper disproves Spock
-   - Scissors cuts Paper
-   - Scissors decapitates Lizard
-   - Spock smashes Scissors
-   - Spock vaporizes Rock
-   - Lizard eats Paper
-   - Lizard poisons Spock
+## Rules
 
-4. **Scoring**: After each round, the winner is awarded a point, and a draw results in no points for either player.
+Same as the show:
+- Scissors cuts Paper, decapitates Lizard
+- Paper covers Rock, disproves Spock
+- Rock crushes Scissors, crushes Lizard
+- Lizard eats Paper, poisons Spock
+- Spock vaporizes Rock, smashes Scissors
 
-5. **Game End**: The game continues until round three.
+## Hardware
 
-## Player Perspective
-In this game, you are always Player 1 (P1), and your opponent is always Player 2 (P2).
+Custom PCB with:
+- ATmega32U2 microcontroller
+- 5 input buttons per player
+- LED display for score/winner
+- Debounced inputs (learned this the hard way after ghost inputs ruined a demo)
 
-- **From your perspective (P1)**: If you win, P1 will win, and P2 will lose. If you lose, P1 will lose, and P2 will win.
-- **From the opponent's perspective (P2)**: The roles are reversed. If they win, P2 will win, and P1 will lose. If they lose, P2 will lose, and P1 will win.
-
+Player 1 is always "you" from the board's perspective - LEDs show P1/P2 win states accordingly.
